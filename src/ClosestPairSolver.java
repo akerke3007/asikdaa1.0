@@ -11,7 +11,7 @@ public class ClosestPairSolver {
         return closest(pointsSortedX, pointsSortedY, 0, points.length - 1);
     }
 
-    private static double closest(Point[] px, Point[] py, int l, int r) {
+    public static double closest(Point[] px, Point[] py, int l, int r) {
         if (r - l <= 3) {
             return bruteForce(px, l, r);
         }
@@ -52,7 +52,7 @@ public class ClosestPairSolver {
         return Math.min(d, minStripDist);
     }
 
-    private static double bruteForce(Point[] points, int l, int r) {
+    public static double bruteForce(Point[] points, int l, int r) {
         double min = Double.POSITIVE_INFINITY;
         for (int i = l; i <= r; i++) {
             for (int j = i + 1; j <= r; j++) {

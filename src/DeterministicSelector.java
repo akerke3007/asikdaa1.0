@@ -34,12 +34,17 @@ public class DeterministicSelector {
             int subRight = Math.min(subLeft + 4, right);
             Arrays.sort(a, subLeft, subRight + 1);
             int medianIndex = subLeft + (subRight - subLeft) / 2;
-            int temp = a[medianIndex];
-            a[medianIndex] = a[left + i];
-            a[left + i] = temp;
+
+            // Ауыстыруды дұрыс индекстермен жасау
+            int targetIndex = left + i;
+            if (targetIndex < a.length && medianIndex < a.length) {
+                int temp = a[medianIndex];
+                a[medianIndex] = a[targetIndex];
+                a[targetIndex] = temp;
+            }
         }
 
-        return select(a, left, left + numOfGroups - 1, left + numOfGroups / 2);
+        return medianOfMedians(a, left, left + numOfGroups - 1);
     }
 
     private static int partition(int[] a, int left, int right, int pivotIndex) {

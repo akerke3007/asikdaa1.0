@@ -1,0 +1,9 @@
+Algorithm,Size,Type,TimeNano
+MergeSort,100,Random,341000
+QuickSort,100,Random,203792
+MergeSort,1000,Random,345834
+QuickSort,1000,Random,635375
+MergeSort,5000,Random,2286042
+QuickSort,5000,Random,3284541
+MergeSort,10000,Random,1188500
+QuickSort,10000,Random,1030750
